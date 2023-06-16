@@ -1,0 +1,20 @@
+---
+- hosts: all  #it will run on any host by all
+  #remote_user: Administrator #for windows server
+  become: false
+  gather_facts: no #this is to speed up the playbook so that it runs faster
+  tasks: 
+  #for windows server
+    - name: download notepad++ on server
+      win_chocolatey:
+        name: notepadplusplus
+        state: present
+
+    - name: download sql server
+      win_chocolatey:
+        name: sql-server-management-studio
+        state: present
+
+
+#through this the software is installed on windows server
+#cmd=ansible-playbook -i WindowsServer/windows-server.yaml WindowsServer/installsoftware.yaml

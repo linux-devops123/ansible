@@ -1,0 +1,27 @@
+- hosts: localhost
+  gather_facts: no #this is to speed up the playbook so that it runs faster
+  
+  tasks:
+  - name: Create EC2 instance by Ansible
+  #code from https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_instance_module.html
+  #starting with - name: start an instance with a public IP address
+
+    ec2_instance:
+      name: "EC2-instance-Ansible"
+      key_name: "roshi"
+      region: ap-south-1
+     
+      vpc_subnet_id: subnet-03dc22388125cd2af
+      instance_type: t2.micro
+      security_group: Security-Ansible2
+      network:
+        assign_public_ip: true
+      image_id: ami-0bd3f43f107376d6b #windows instance
+      tags:
+        Environment: RoshiAnsible 
+
+#first encrypted the ansible cred.yaml file
+#ansible-vault encrypt AWSInfrastructureAnsible/cred.yaml
+
+#cmd=ansible-playbook --ask-vault-pass AWSInfrastructureAnsible/ec2-ansible.yaml
+#password=123

@@ -1,0 +1,42 @@
+#this is a concept of handlers=we dont want apache to restart every time we make a change,
+#we just want to run it directly
+#handlers are tasks which only run when told
+#it will only run once and that too at the end
+#these are specially used when u want to restart the service
+#visit bookmarks for this in firefox
+---
+- hosts: all
+  remote_user: root #for creating ssh connection
+  become: true
+  gather_facts: no
+  tasks: #playbooks executes tasks more than once
+  - name: Install postgresql
+    apt:  #package manager to install postgreas
+      name: postgresql
+      state: latest #ansible works in past tense
+    notify:
+      - Restart nginx
+    
+  - name: Install nginx
+    apt:  #package manager to install nginx
+      name: nginx
+      state: latest #ansible works in past tense
+    notify: 
+      - Restart nginx
+  
+
+  - name: Remove nginx
+    apt:  #package manager to install 
+      name: nginx
+      state: absent
+
+
+  handlers:
+  - name: Restart nginx
+    service:
+      name: nginx
+      state: restarted 
+
+ 
+  
+#ansible-playbook -i aws/aws.yaml playbooks/handler.yaml

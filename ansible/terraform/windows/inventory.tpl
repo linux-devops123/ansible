@@ -1,0 +1,15 @@
+
+[win]
+%{for i in x ~}
+${i}
+%{ endfor ~}
+
+
+[win:vars]
+ansible_ssh_port= 5986
+ansible_ssh_user= Administrator
+ansible_ssh_pass = "Roshi123!!!"
+ansible_connection= winrm
+ansible_winrm_scheme= https
+ansible_winrm_transport = basic
+ansible_winrm_server_cert_validation= ignore

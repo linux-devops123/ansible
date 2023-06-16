@@ -1,0 +1,21 @@
+---
+- hosts: all  #it will run on any host by all
+  remote_user: ubuntu #for ubuntu server
+  become: true
+  gather_facts: no #this is to speed up the playbook so that it runs faster
+  tasks: 
+  #for linux server
+  - name: Install postgresql
+    apt:  
+      name: postgresql
+      state: latest
+      update_cache: yes
+      cache_valid_time: "900"
+    
+  - name: Remove postgresql
+    apt:  
+      name: postgresql
+      state: absent
+
+
+

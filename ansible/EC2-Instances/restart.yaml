@@ -1,0 +1,19 @@
+- hosts: localhost
+  vars:
+    instance_ids:
+      - "{{ instanceid_1 }}"
+      - "{{ instanceid_2 }}"
+  tasks:
+  - name: restart EC2 instance by Ansible
+  #code from https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_module.html
+  #starting with - name: start an instance with a public IP address
+
+    ec2_instance:
+      instance_ids: "{{ instance_ids }}"
+      state: restarted
+      region: ap-south-1
+    
+  
+#cmd=ansible-playbook --ask-vault-pass  EC2-Instances/restart.yaml
+#password=123
+#this will start the ec2 instance

@@ -1,0 +1,22 @@
+---
+- hosts: all #it will run on any host using all
+  remote_user: Administrator #for windows server
+  become: false
+  gather_facts: no
+  
+  tasks:
+  #for windows server
+    - name: download softwares on server
+      win_chocolatey:
+        name: "{{ item }}"
+        state: present
+        
+      loop: 
+        - notepadplusplus
+        - visualstudio2019professional
+        - googlechrome
+
+
+#through this the software is installed on windows server
+#cmd=ansible-playbook -i WindowsServer/windows-server.yaml WindowsServer/installsoftware.yaml
+

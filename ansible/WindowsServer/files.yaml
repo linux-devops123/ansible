@@ -1,0 +1,31 @@
+---
+
+
+- hosts: "{{serverip}}"
+  remote_user: Administrator #for windows server
+  become: false
+  become_user: root
+  gather_facts: no #this is to speed up the playbook so that it runs faster
+  vars:
+    path: ""
+    serverip: ""
+    exe: ""
+  
+  tasks: 
+  #for windows server
+    
+
+    - name: start the exe
+      win_shell: "{{ exe }}"
+      async: 300
+      poll: 0
+      
+    - name: delete file in server
+      win_file:
+        path: "{{path}}"
+        state: absent
+
+        
+
+#cmd=ansible-playbook -i WindowsServer/windows-server.yaml WindowsServer/files.yaml
+   
