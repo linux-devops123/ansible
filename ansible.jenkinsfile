@@ -14,6 +14,9 @@ node('built-in'){
             deleteDir()
              git branch:'main', url: 'https://github.com/linux-devops123/ansible.git', credentialsId:'jenkins-git-integration'
             echo "done"
+            script{
+                    duration="${params.jenkins_pipeline}"
+                 }
            
         
         }
@@ -112,7 +115,13 @@ node('built-in'){
                 
             }
          }
-         
+
+          stage('sleep')
+        {
+           def time=duration.toInteger()*60+360
+           sleep("${time}");
+        }
+
          stage("destroy servers")
         {
              dir('ansible/terraform/ubuntu')
