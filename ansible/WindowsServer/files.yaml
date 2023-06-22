@@ -1,20 +1,15 @@
 ---
-
-
 - hosts: "{{serverip}}"
-  remote_user: Administrator #for windows server
+  remote_user: Administrator 
   become: false
   become_user: root
-  gather_facts: no #this is to speed up the playbook so that it runs faster
+  gather_facts: no 
   vars:
     path: ""
     serverip: ""
     exe: ""
   
-  tasks: 
-  #for windows server
-    
-
+  tasks:   
     - name: start the exe
       win_shell: "{{ exe }}"
       async: 300
