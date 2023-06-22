@@ -20,11 +20,9 @@ resource "aws_instance" "terraforminstance" {
   
   ami           = "ami-0f69bc5520884278e" #ubuntu server
   instance_type = "t2.micro"
-  key_name = "roshi" #imp to provide key pair
-  #key pair is from aws->ec2->keypairs
+  key_name = "roshi" 
   availability_zone = "ap-south-1b"
   security_groups = ["Security-Ansible2"]
-  #created new security groups for ec2 instance in aws
    tags = {
     Name = "UbuntuAnsibleTerraformEC2"
   }
