@@ -66,25 +66,16 @@ resource "null_resource" "provisioner"{
   }
 
 }
-#into the command
-#hosts.ini is made while terraform apply
-#sed command in linux performs replacement
-#into the newly created hosts.ini, it replaces public ip with host ip address in file
-# /s is substitution
-# /g is global replacement
-#see -https://geeksforgeeks.org/sed-command-in-linux-unix-with-examples/
+
 output "id"{
   value =  element("${aws_instance.windowsinstance.*.public_ip}",0)
   #value =  ["${aws_instance.windowsinstance.*.public_ip}"]
   
 }
-#sleep for 3 minutes so that 2/2 checks get enabled 
-#and we are able to push the ansible script for windows connection
-#and then run the ansible playbook
+
 
 #steps in terminal
 #do terraform init
-
 #terraform apply
 #login credential
 #username= administrator
