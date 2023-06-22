@@ -1,6 +1,5 @@
 ---
 - hosts: all 
-  #remote_user: Administrator
   become: false
   gather_facts: no
   tasks: 
