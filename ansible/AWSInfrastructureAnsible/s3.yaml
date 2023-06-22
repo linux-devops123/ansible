@@ -1,6 +1,6 @@
 --- 
 - hosts: localhost
-  gather_facts: no #this is to speed up the playbook so that it runs faster
+  gather_facts: no 
 
   tasks:
   - name: s3 by Ansible
