@@ -3,9 +3,6 @@
  
   tasks:
   - name: Delete EC2 instance by Ansible
-  #code from https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_instance_module.html
-  #starting with - name: start an instance with a public IP address
-
     ec2_instance:
       name: "EC2-instance-Ansible"
       state: absent
