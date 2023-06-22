@@ -1,6 +1,6 @@
 ---
-- hosts: all #it will run on any host using all
-  remote_user: Administrator #for windows server
+- hosts: all 
+  remote_user: Administrator 
   become: false
   gather_facts: no
   
