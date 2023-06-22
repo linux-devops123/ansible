@@ -10,9 +10,6 @@
  
   tasks:
   - name: start EC2 instance by Ansible
-  #code from https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_module.html
-  #starting with - name: start an instance with a public IP address
-
     ec2_instance:
       instance_ids: "{{ instance_ids }}"   
       state: running
