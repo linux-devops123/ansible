@@ -1,8 +1,8 @@
 ---
-- hosts: all  #it will run on any host by all
-  #remote_user: Administrator #for windows server
+- hosts: all 
+  #remote_user: Administrator
   become: false
-  gather_facts: no #this is to speed up the playbook so that it runs faster
+  gather_facts: no
   tasks: 
   #for windows server
     - name: download notepad++ on server
