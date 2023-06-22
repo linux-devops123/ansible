@@ -4,7 +4,6 @@
   become: true
   gather_facts: no 
   tasks: 
-  #for linux server
   - name: Install postgresql
     apt:  
       name: postgresql
