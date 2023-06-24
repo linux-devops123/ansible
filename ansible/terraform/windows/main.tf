@@ -21,7 +21,7 @@ provider "aws" {
 
 
 resource "aws_instance" "windowsinstance" {
-  count         = 2      # will create 2 instances
+  count         = 2      
   ami           = var.ami
   instance_type = var.instance_type
   availability_zone = var.availability_zone
