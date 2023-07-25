@@ -1,14 +1,14 @@
 
 ---
 - hosts: all
-  remote_user: root #for creating ssh connection
+  remote_user: root 
   become: true
   gather_facts: no
-  tasks: #playbooks executes tasks more than once
+  tasks: 
   - name: Install postgresql
-    apt:  #package manager to install postgreas
+    apt: 
       name: postgresql
-      state: latest #ansible works in past tense
+      state: latest
     notify:
       - Restart nginx
     
