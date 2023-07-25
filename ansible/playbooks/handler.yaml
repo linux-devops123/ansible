@@ -13,9 +13,9 @@
       - Restart nginx
     
   - name: Install nginx
-    apt:  #package manager to install nginx
+    apt:  
       name: nginx
-      state: latest #ansible works in past tense
+      state: latest
     notify: 
       - Restart nginx
   
