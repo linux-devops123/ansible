@@ -19,8 +19,7 @@
       tags:
         Environment: RoshiAnsible 
 
-#first encrypted the ansible cred.yaml file
-#ansible-vault encrypt AWSInfrastructureAnsible/cred.yaml
+
 
 #cmd=ansible-playbook --ask-vault-pass AWSInfrastructureAnsible/ec2-ansible.yaml
-#password=123
+
