@@ -12,5 +12,4 @@
     
   
 #cmd=ansible-playbook --ask-vault-pass  EC2-Instances/restart.yaml
-#password=123
-#this will start the ec2 instance
+
