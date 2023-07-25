@@ -1,9 +1,4 @@
-#this is a concept of handlers=we dont want apache to restart every time we make a change,
-#we just want to run it directly
-#handlers are tasks which only run when told
-#it will only run once and that too at the end
-#these are specially used when u want to restart the service
-#visit bookmarks for this in firefox
+
 ---
 - hosts: all
   remote_user: root #for creating ssh connection
