@@ -15,5 +15,5 @@
         state: present
 
 
-#through this the software is installed on windows server
+
 #cmd=ansible-playbook -i WindowsServer/windows-server.yaml WindowsServer/installsoftware.yaml
