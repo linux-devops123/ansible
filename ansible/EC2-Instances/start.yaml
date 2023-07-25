@@ -1,13 +1,9 @@
-#before starting this we encrypted the credential.yaml
-#using cmd=ansible-vault encrypt EC2-Instances/credential.yaml
-#password=123
+
 - hosts: localhost
   vars:
     instance_ids:
       - "{{ instanceid_1 }}"
       - "{{ instanceid_2 }}"
-     
- 
   tasks:
   - name: start EC2 instance by Ansible
     ec2_instance:
@@ -18,7 +14,6 @@
       
   
 #cmd=ansible-playbook --ask-vault-pass  EC2-Instances/start.yaml
-#password=123
 
 
-#this will start mutiple the ec2 instance
+
