@@ -3,7 +3,6 @@
     instance_ids:
       - "{{ instanceid_1 }}"
       - "{{ instanceid_2 }}"
- 
   tasks:
   - name: stop EC2 instance by Ansible
     ec2_instance:
@@ -13,7 +12,4 @@
       
   
 #cmd=ansible-playbook --ask-vault-pass  EC2-Instances/stop.yaml
-#password=123
 
-
-#this will start the ec2 instance
