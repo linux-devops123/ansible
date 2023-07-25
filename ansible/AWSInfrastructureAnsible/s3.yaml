@@ -1,7 +1,6 @@
 --- 
 - hosts: localhost
   gather_facts: no 
-
   tasks:
   - name: s3 by Ansible
     aws_s3:
@@ -10,6 +9,6 @@
       src: /var/jenkins_home/workspace/ansible/ansible.jenkinsfile
       mode: put
       
-  #cmd
+
   #ansible-playbook --ask-vault-pass AWSInfrastructureAnsible/s3.yaml
-#password=123
+
