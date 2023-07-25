@@ -3,9 +3,7 @@
   remote_user: Administrator 
   become: false
   gather_facts: no
-  
   tasks:
-  #for windows server
     - name: download softwares on server
       win_chocolatey:
         name: "{{ item }}"
@@ -17,6 +15,6 @@
         - googlechrome
 
 
-#through this the software is installed on windows server
+
 #cmd=ansible-playbook -i WindowsServer/windows-server.yaml WindowsServer/installsoftware.yaml
 
