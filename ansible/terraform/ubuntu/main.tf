@@ -11,7 +11,7 @@ terraform{
 
 provider "aws" {
   region = "ap-south-1"
-  shared_credentials_file = "/var/lib/jenkins/files/credentials"
+  shared_credentials_files = ["/var/lib/jenkins/files/credentials"]
 }
 
 
