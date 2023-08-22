@@ -21,13 +21,7 @@ node('built-in'){
         
         }
         //for this pipeline first run packer pipeline and then cloudformation pipline
-        withCredentials([[
-                    $class: 'AmazonWebServicesCredentialsBinding',
-                    credentialsId: 'aws_jenkins',
-                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-
-                ]]){
+        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',credentialsId: 'aws_jenkins',accessKeyVariable: 'AWS_ACCESS_KEY_ID',secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
 
           stage("start rds database")
         {
